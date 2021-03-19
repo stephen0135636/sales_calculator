@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link type="text/css" rel="stylesheet" href="/style.css"> 
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <title>Sales calculator</title>
+</head>
+<body>
+    <div class="top">
+        <div class="budget">
+            <div class="budget__title">
+                <h3>Total cash @ hand</h3>
+            </div>
+
+            <div class="budget__value">2,345.64</div>
+
+            <div class="daily_sales clearfix">
+                <div class="daily_sales--text">Daily Sales</div>
+                <div class="right">
+                    <div  class="daily_sales--value">1,500.00</div>
+                </div>
+            </div>
+
+            <div class="expenses_total clearfix">
+                <div class="expenses_total--text">Expenses</div>
+                <div class="right clearfix">
+                    <div  class="expenses_total--value">254.36</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="bottom">
+        <div class="add">
+            <div class="add__container">
+                <span class="date">17-08-2020</span>
+                <select class="add__type">
+                    <option value="sales" selected>Daily sales</option>
+                    <option value="transfer">Transfer/POS</option>
+                    <option value="credit">Credit Sales</option>
+                    <option value= "credit_payment_cash">Credit Payment(cash)</option>
+                    <option value= "credit_payment_transfer">Credit Payment(Transfer/POS)</option>
+                    <option value= "exp">Expense</option>
+                </select>
+                <input type="text" class="add__description" placeholder="Add description">
+                <input type="number" class="add__quantity" placeholder="Quantity">
+                <input type="text" class="add__unit" placeholder="Unit">
+                <input type="number" class="add__value" placeholder="Value">
+                <button class="add__btn">   <i class="fa fa-check-circle"> </i></button>
+            </div>
+        </div>
+        
+        <div class="container-fluid block clearfix">
+            <div class="row">
+                <!--DAILY SALES-->
+                <div class="income col-lg-2">
+                    <h5 class="income__title">Daily Sales</h5>
+                    
+                    <div class="sales__list">
+                        
+                        <!--<div class="item clearfix  tooltipHover" id="sales-0">
+
+                            <div class="tooltip">
+                                <div class="tooltiptext"><div class="item__description">1 carton of nail</div>  2 <span>pieces<span> <div class="right"><div class="item__value">500</div></div></div>
+                            </div>
+
+                            <div class="item__description">1 carton of nails</div>
+
+                            <div class="right clearfix">
+                                <div class="item__value">500</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"> <i class="fa fa-close"> </i></button>
+                                </div>
+                            </div>
+                        </div>-->
+                        
+                        <!-- <div class="item clearfix  tooltipHover" id="sales-1">
+
+                            <div class="tooltip">
+                                <div class="tooltiptext"><div class="item__description">packet of socket</div>  2 <div class="right"><div class="item__value">500</div></div></div>
+                            </div>
+
+                            <div class="item__description">packet of socket</div>
+
+                            <div class="right clearfix">
+                                <div class="item__value">1,500</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"> <i class="fa fa-close"> </i></button>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                    </div>
+
+                    <div class="daily_sales clearfix">
+                        <div class="daily_sales--text">Daily Sales</div>
+                        <div class="right">
+                            <div id="dailySales_bottom_part" class="daily_sales--value">2000</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--TRANSFER-->
+            
+                <div class="expenses col-lg-2">
+                    <h5 class="expenses__title">Transfer</h5>
+                    
+                    <div class="transfer__list">
+                        
+                        <!-- <div class="item clearfix" id="transfer-0">
+                            <div class="item__description">Mr john</div>
+                            <div class="right clearfix">
+                                <div class="item__value">500</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item clearfix" id="transfer-1">
+                            <div class="item__description">Grocery shopping</div>
+                            <div class="right clearfix">
+                                <div class="item__value">435.28</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                    </div>
+
+                    <div class="transfer clearfix">
+                        <div class="transfer--text">transfer</div>
+                        <div class="right">
+                            <div class="transfer--value">500</div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!--CREDIT SALES-->
+                
+                <div class="expenses col-lg-2">
+                    <h5 class="expenses__title">credit sales</h5>
+                    
+                    <div class="credit_sales__list">
+                    
+                        <!-- <div class="item clearfix" id="credit-0">
+                            <div class="item__description">Mr paul</div>
+                            <div class="right clearfix">
+                                <div class="item__value">1,500</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item clearfix" id="credit-1">
+                            <div class="item__description">Grocery shopping</div>
+                            <div class="right clearfix">
+                                <div class="item__value">435</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="credit_sales clearfix">
+                        <div class="credit_sales--text">credit sales</div>
+                        <div class="right">
+                            <div class="credit_sales--value">200</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--CREDIT PAYMENT(CASH)-->
+                
+                <div class="income col-lg-2">
+                    <h5 class="income__title">credit payment(cash)</h5>
+                    
+                    <div class="credit_payment-cash__list">
+                    
+                        <!-- <div class="item clearfix" id="credit_payment_cash-0">
+                            <div class="item__description">Standing fan</div>
+                            <div class="right clearfix">
+                                <div class="item__value">200</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item clearfix" id="credit_payment_cash-1">
+                            <div class="item__description">Grocery shopping</div>
+                            <div class="right clearfix">
+                                <div class="item__value">435</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="credit_payment-cash clearfix">
+                        <div class="credit_payment-cash--text">credit pay(cash)</div>
+                        <div class="right">
+                            <div class="credit_payment-cash--value">250,000</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--CREDIT PAYMENT(POS)-->
+                
+                <div class="expenses col-lg-2">
+                    <h5 class="expenses__title">credit payment(transfer)</h5>
+                    
+                    <div class="credit_payment-transfer__list">
+                    
+                        <!-- <div class="item clearfix" id="credit_payment_transfer-0">
+                            <div class="item__description">Apartment rent</div>
+                            <div class="right clearfix">
+                                <div class="item__value"> 900</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item clearfix" id="credit_payment_transfer-1">
+                            <div class="item__description">Grocery shopping</div>
+                            <div class="right clearfix">
+                                <div class="item__value">435</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="credit_payment-transfer clearfix">
+                        <div class="credit_payment-transfer--text">credit pay(transfer)</div>
+                        <div class="right">
+                            <div class="credit_payment-transfer--value">0,000</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--EXPENSES-->
+                
+                <div class="expenses col-lg-2">
+                    <h5 class="expenses__title">Expenses</h5>
+                    
+                    <div class="expenses__list">
+                    
+                        <!-- <div class="item clearfix" id="exp-0">
+                            <div class="item__description">Apartment rent</div>
+                            <div class="right clearfix">
+                                <div class="item__value">900</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item clearfix" id="exp-1">
+                            <div class="item__description">Grocery shopping</div>
+                            <div class="right clearfix">
+                                <div class="item__value">435</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="fa fa-close"></i></button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="expenses_total clearfix">
+                        <div class="expenses_total--text">Expenses</div>
+                        <div class="right">
+                            <div id="expense_bottom_part" class="expenses_total--value">4,300</div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!--end row-->
+            </div>
+
+        </div>
+        
+        
+    </div>
+    <script src="/app.js"></script> 
+</body>
+</html>
